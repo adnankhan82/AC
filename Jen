@@ -1,109 +1,109 @@
 pipeline {
     agent any
-    
-    stages {
 
-        stage ("B uild") {
+stages {
 
-            steps {
+stage ("B uild") {
 
-                echo "Build the code using build automation tool Maven to compile and package the code "
+steps {
 
-            }
+echo "Build the code using build automation tool Maven to compile and package the code "
 
-        }
+ }
 
-        stage ("Unit & Integrating Testing") {
+}
 
-            steps {
+stage ("Unit & Integrating Testing") {
 
-                echo "Run unit tests using Junit to ensure the code functions as expected and run integration tests using Selenium to ensure the different components of the application work together as expected"
+steps {
 
-            }
+echo "Run unit tests using Junit to ensure the code functions as expected and run integration tests using Selenium to ensure the different components of the application work together as expected"
 
-            post {
+}
 
-                success {
+post {
 
-                    mail to: "dhani.gul@gmail.com",
+success {
 
-                    subject: "Completion of Test Stage",
+ mail to: "dhani.gul@gmail.com",
 
-                    body: " Successful"
+ subject: "Completion of Test Stage",
 
-                }
+body: " Successful"
 
-            }
+}
 
-        }
+ }
 
-      stage ("Code Analysis")  {
+}
 
-            steps {
+stage ("Code Analysis") {
 
-                echo "Integrate code analysis tool FindBugs to analyse the code and ensure it meets industry standards"
+ steps {
 
-            }
+echo "Integrate code analysis tool FindBugs to analyse the code and ensure it meets industry standards"
 
-        }
+}
 
-      stage ("Security Scan") {
+}
 
-            steps {
+stage ("Security Scan") {
 
-                echo "Perform a security scan on the code using Probely to identify any vulnerabilities"
+steps {
 
-            }
+echo "Perform a security scan on the code using Probely to identify any vulnerabilities"
 
-
+}
 
 
-            post {
 
-                success {
 
-                    mail to: "dhani.gul@gmail.com",
+ post {
 
-                    subject: "Completion of Security Scan ",
+success {
 
-                    body: " Successfull"
+mail to: "dhani.gul@gmail.com",
 
-                }
+subject: "Completion of Security Scan ",
 
-            }
+body: " Successfull"
 
-        }
+}
 
-      stage ("Deploy to Staging") {
+}
 
-            steps {
+ }
 
-                echo "Deploy the application to the staging server - AWS EC2 instance"
+stage ("Deploy to Staging") {
 
-            }
+steps {
 
-        }
+echo "Deploy the application to the staging server - AWS EC2 instance"
 
-      stage ("Integration Tests on Staging") {
+}
 
-            steps {
+}
 
-                echo "Run integration tests on the staging environment to ensure the application functions as expected in a production-like environment"
+stage ("Integration Tests on Staging") {
 
-            }
+steps {
 
-        }
+echo "Run integration tests on the staging environment to ensure the application functions as expected in a production-like environment"
 
-      stage ("Deploy to Production") {
+}
 
-            steps {
+}
 
-                echo "Deploy the application to the production server - AWS EC2 instance"
+stage ("Deploy to Production") {
 
-            }
+steps {
 
-      }
+echo "Deploy the application to the production server - AWS EC2 instance"
 
-    }
+}
+
+}
+
+}
 
 }
