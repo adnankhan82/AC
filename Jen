@@ -3,7 +3,7 @@ pipeline {
 
 stages {
 
-stage ("B uild") {
+stage ("Build") {
 
 steps {
 
@@ -17,7 +17,7 @@ stage ("Unit & Integrating Testing") {
 
 steps {
 
-echo "Run unit tests using Junit to ensure the code functions as expected and run integration tests using Selenium to ensure the different components of the application work together as expected"
+echo "Run unit tests using PyUnit to ensure the code functions as expected and run integration tests using Cypress to ensure the different components of the application work together as expected"
 
 }
 
@@ -41,7 +41,7 @@ stage ("Code Analysis") {
 
  steps {
 
-echo "Integrate code analysis tool FindBugs to analyse the code and ensure it meets industry standards"
+echo "Industry standard assurance of code was checked by using the tool SonarQube"
 
 }
 
@@ -51,7 +51,7 @@ stage ("Security Scan") {
 
 steps {
 
-echo "Perform a security scan on the code using Probely to identify any vulnerabilities"
+echo "Perform a Nessus security scan on the code for security vulnerabilities"
 
 }
 
@@ -78,7 +78,7 @@ stage ("Deploy to Staging") {
 
 steps {
 
-echo "Deploy the application to the staging server - AWS EC2 instance"
+echo "Deploy the application to the staging server - Azure Virtual Machines"
 
 }
 
@@ -98,7 +98,7 @@ stage ("Deploy to Production") {
 
 steps {
 
-echo "Deploy the application to the production server - AWS EC2 instance"
+echo "Deploy the application to the production server - Azure Virtual Machines"
 
 }
 
