@@ -26,11 +26,13 @@ post {
     success {
 
         echo "sending email with attachment"
-        emailext(
+        emailext 
             subject: "Success",
-            attachLog: true, attachmentsPattern: "test.csv",compressLog: true,
-            body: "Test Email" ,to: "dhani.gul@gmail.com"
-        )
+            attachLog: true, 
+            attachmentsPattern: "test.csv",
+            compressLog: true,
+            body: "Test Email" ,
+            to: "dhani.gul@gmail.com"     
 
         cleanWs()
 
