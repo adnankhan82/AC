@@ -18,6 +18,7 @@ stage ("Unit & Integrating Testing") {
 steps {
 
 echo "Run unit tests using PyUnit to ensure the code functions as expected and run integration tests using Cypress to ensure the different components of the application work together as expected"
+sh "echo 'Hello world,1' >> test.csv"
 
 }
 
