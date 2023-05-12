@@ -27,7 +27,7 @@ post {
 
         emailext(
             subject: "Success",
-            attachLog: true, attachmentsPattern: "**/*.csv",compressLog: true,
+            attachLog: true, attachmentsPattern: "test.csv",compressLog: true,
             body: "Test Email" ,to: "dhani.gul@gmail.com"
         )
 
