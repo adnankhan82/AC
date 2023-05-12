@@ -24,13 +24,6 @@ echo "Run unit tests using PyUnit to ensure the code functions as expected and r
 post {
 
 success {
-
- mail to: "dhani.gul@gmail.com",
-
- subject: "Completion of Test Stage",
-
-body: " Successful"
-
 }
 
  }
