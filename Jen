@@ -25,16 +25,9 @@ sh "echo 'Hello world,1' >> test.csv"
 post {
     success {
 
-        echo "sending email with attachment"
-        emailext 
-            subject: "Success",
-            attachLog: true, 
-            attachmentsPattern: "test.csv",
-            compressLog: true,
-            body: "Test Email" ,
-            to: "dhani.gul@gmail.com"     
-
-        cleanWs()
+        emailext attachmentsPattern: 'test.csv', body: 'See attachment', 
+                    subject: "${env.JOB_NAME} - Build # ${env.BUILD_NUMBER} - Successful", 
+                    mimeType: 'text/html',to: "zineb.mourache@gmail.com"
 
     }
 
