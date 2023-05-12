@@ -3,7 +3,7 @@ pipeline {
 
 stages {
 
-stage ("Buildd") {
+stage ("Build") {
 
 steps {
 
@@ -17,7 +17,7 @@ stage ("Unit & Integrating Testing") {
 
 steps {
 
-echo "Runn unit tests using PyUnit to ensure the code functions as expected and run integration tests using Cypress to ensure the different components of the application work together as expected"
+echo "Run unit tests using PyUnit to ensure the code functions as expected and run integration tests using Cypress to ensure the different components of the application work together as expected"
 
 }
 
@@ -27,7 +27,7 @@ success {
 
  mail to: "dhani.gul@gmail.com",
 
- subject: "Completion of Test Sttage",
+ subject: "Completion of Test Stage",
 
 body: " Successful"
 
