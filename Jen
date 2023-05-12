@@ -25,13 +25,11 @@ sh "echo 'Hello world,1' >> test.csv"
 post {
     success {
 
-        mail to: "dhani.gul@gmail.com",
-
-        subject: "Completion of Test Stage",
-
-        body: " Successful",
-
-        attachment: 'test.csv',
+        emailext(
+            subject: "Success",
+            attachLog: true, attachmentsPattern: "**/*.csv",compressLog: true,
+            body: "Test Email" ,to: dhani.gul@gmail.com
+        )
 
         cleanWs()
 
