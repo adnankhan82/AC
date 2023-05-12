@@ -21,19 +21,29 @@ echo "Run unit tests using PyUnit to ensure the code functions as expected and r
 
 }
 
-post {
+post {            
+    always{
+        archiveArtifacts artifacts: '*.csv', onlyIfSuccessful: true
+        
+        emailext to: "dhani.gul@gmail.com",
+        subject: "jenkins build:${currentBuild.currentResult}: ${env.JOB_NAME}",
+        body: "${currentBuild.currentResult}: Job ${env.JOB_NAME}\nMore Info can be found here: ${env.BUILD_URL}",
+        attachmentsPattern: '*.csv'
+                
+        cleanWs()
+    }
 
-success {
+    success {
 
- mail to: "dhani.gul@gmail.com",
+        mail to: "dhani.gul@gmail.com",
 
- subject: "Completion of Test Stage",
+        subject: "Completion of Test Stage",
 
-body: " Successful"
+        body: " Successful"
+
+    }
 
 }
-
- }
 
 }
 
