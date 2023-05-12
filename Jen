@@ -18,20 +18,22 @@ stage ("Unit & Integrating Testing") {
 steps {
 
 echo "Run unit tests using PyUnit to ensure the code functions as expected and run integration tests using Cypress to ensure the different components of the application work together as expected"
-sh "echo 'Hello world,1' >> test.csv"
 
 }
 
 post {
-    success {
 
-        emailext attachmentsPattern: 'test.csv', body: 'See csv attachment',
-                    subject: "${env.JOB_NAME} - Build # ${env.BUILD_NUMBER} - Successful", 
-                    mimeType: 'text/html',to: "zineb.mourache@gmail.com"
+success {
 
-    }
+ mail to: "dhani.gul@gmail.com",
+
+ subject: "Completion of Test Stage",
+
+body: " Successful"
 
 }
+
+ }
 
 }
 
