@@ -25,7 +25,7 @@ sh "echo 'Hello world,1' >> test.csv"
 post {
     success {
 
-        emailext attachmentsPattern: 'test.csv', body: 'See attachment', 
+        emailext attachmentsPattern: 'test.csv', body: 'See csv attachment',
                     subject: "${env.JOB_NAME} - Build # ${env.BUILD_NUMBER} - Successful", 
                     mimeType: 'text/html',to: "zineb.mourache@gmail.com"
 
