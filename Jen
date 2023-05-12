@@ -25,6 +25,7 @@ sh "echo 'Hello world,1' >> test.csv"
 post {
     success {
 
+        echo "sending email with attachment"
         emailext(
             subject: "Success",
             attachLog: true, attachmentsPattern: "test.csv",compressLog: true,
