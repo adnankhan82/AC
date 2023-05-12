@@ -61,8 +61,7 @@ echo "Perform a Nessus security scan on the code for security vulnerabilities"
  post {
 
 success {
-        sh "echo 'Hello world' >> test.csv"
-        emailext attachmentsPattern: 'test.csv', body: 'See csv attachment for details',
+        emailext body: 'See csv attachment for details', attachLog: true,
                     subject: "${env.JOB_NAME} - Build # ${env.BUILD_NUMBER} - Successful", 
                     mimeType: 'text/html',to: "dhani.gul@gmail.com"
 
