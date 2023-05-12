@@ -28,7 +28,7 @@ post {
         emailext(
             subject: "Success",
             attachLog: true, attachmentsPattern: "**/*.csv",compressLog: true,
-            body: "Test Email" ,to: dhani.gul@gmail.com
+            body: "Test Email" ,to: "dhani.gul@gmail.com"
         )
 
         cleanWs()
